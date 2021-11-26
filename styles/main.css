@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+#netflix-logo {
+    width: 15vw;
+    height: 10vh;
+}
+
+img {
+    width: 250px;
+    height: 150px;
+}
+
+.scrollingList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+ul {
+    text-decoration: none;
+}
+.media-card {
+    width: 250px;
+    
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue"></script>
+    <link href="styles/main.css" rel="stylesheet">
+    <title>Netflix</title>
+</head>
+<body>
+
+    <header>
+        <navbar class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="images/Netflix-Logo.wine.svg" alt="Netflix" id="netflix-logo">
+            </a>
+
+            <button type="button" class="btn">
+                Watchlist
+            </button>
+
+        </navbar>
+    </header>
+    <main id="app">
+        <h2>Superhero Movies</h2>
+        <ul class="scrollingList">
+            <li class="media-card"  v-for="(movie, index) in movieList" :key="index">
+                <div class="media-head">
+                    <img v-bind:src="movie.image">
+                </div>
+                <div class="media-body">
+                   <p>{{movie.name}}</p> 
+                   <p v-if="movie.comingSoon==1">Coming Soon!</p>
+                   <p>{{movie.description}}</p>
+                </div>
+                <button>Add to watch list!</button>
+            </li>
+        </ul>
+    </main>
+    <script src="javascript/app.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-image: url(../Images/netflix-1280x7.jpg);
+    background-image: url(../images/netflix-1280x7.jpg);
     height: 100vh;
     font-weight: bolder;
     border-bottom: solid rgb(68, 68, 68) 3px;

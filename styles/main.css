@@ -12,8 +12,8 @@ body {
 }
 
 img {
-    width: 250px;
-    height: 150px;
+    width: 200px;
+    height: 250px;
 }
 
 .scrollingList {
@@ -29,4 +29,19 @@ ul {
 .media-card {
     width: 250px;
     
+}
+
+#header-video {
+    max-height: 70vh;
+}
+
+#header-content {
+    position: absolute;
+    bottom: 25vh;
+    max-width: 25vw;
+}
+
+#watchlist-btn {
+    background-color: red;
+    color: white;
 }

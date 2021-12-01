@@ -20,28 +20,59 @@ img {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
 }
 
 ul {
-    text-decoration: none;
+    list-style-type: none;
 }
+
+li {
+    margin: 10px;
+    transition: all .2s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.2);
+}
+
 .media-card {
     width: 250px;
     
 }
 
 #header-video {
+    min-width: 100%;
     max-height: 70vh;
+    max-width: 100%;
 }
 
 #header-content {
     position: absolute;
     bottom: 25vh;
     max-width: 25vw;
+    left: 10vw;
+    color: #ccc;
 }
 
-#watchlist-btn {
-    background-color: red;
+.media-body{
+    width: 180%;
+    background-color: rgb(43, 42, 42);
+    padding: 3px;
+    border: white solid 1px;
+    border-radius: 12px;
+}
+
+.nav-link {
+    background-color: rgb(189, 185, 185) !important;
     color: white;
+}
+
+#nav-ul{
+    transition: none;
+}
+
+#watchlist-body {
+    width: 100%;
+    border: none;
+    background-color: #000;
 }

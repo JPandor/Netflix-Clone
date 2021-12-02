@@ -15,7 +15,7 @@ let movie = new Vue({
             description: "Series based on the Marvel Comics superhero Hawkeye, centering on the adventures of Young Avenger, Kate M. Bishop, who took on the role after the original Avenger, Clint Barton.",
             image: "../images/movies/hawkeye.jpg",
             comingSoon: 1,
-            date: new Date(2021, 11, 1),
+            date: new Date(2021, 11, 8),
             actors: "Jeremy Renner, Hailee Steinfeld and Florence Pugh",
             director: "",
             hover: false
@@ -404,12 +404,13 @@ let movie = new Vue({
                     director: movieDirector
                 }
                 //pushes to watchlist
-                this.watchList.push(myObj)
+                this.watchList.push(myObj);
                 // adds to local storage
                 let jd = JSON.stringify(myObj);
-                localStorage.setItem(movieName, jd)
-            }
+                localStorage.setItem(movieName, jd);
+            };
         },
+
         // deleting items from the watchlist
         removeItem: function (movieName) {
             //gets the index of the movie to be deleted
@@ -417,7 +418,7 @@ let movie = new Vue({
             //removes movie from local storage and watchlist 
             if (index > -1) {
                 this.watchList.splice(index, 1);
-                localStorage.removeItem(movieName)
+                localStorage.removeItem(movieName);
             }
         },
     },
@@ -425,12 +426,12 @@ let movie = new Vue({
         //search filter 
         filteredMovies() {
             //creating a new array for the searched movies
-            let movieFind = this.popularList.concat(this.actionList, this.comedyList, this.kidList)
+            let movieFind = this.popularList.concat(this.actionList, this.comedyList, this.kidList);
             movieFind = movieFind.filter((item) => {
                 return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
-            })
+            });
 
-            return movieFind
+            return movieFind;
         }
 
     },
@@ -453,21 +454,21 @@ let movie = new Vue({
         // create array for upcoming movies
         upcomingMovie = this.popularList.concat(this.actionList, this.comedyList, this.kidList)
         upcomingMovie = upcomingMovie.filter((item) => {
-            return item.comingSoon == 1
+            return item.comingSoon == 1;
         })
         // if data is equal to the upcoming movie date show an alert 
         
         for (i of upcomingMovie) {
-            const releaseDate = i.date
-            const today = new Date()
+            const releaseDate = i.date;
+            const today = new Date();
             const alerted = sessionStorage.getItem("alerted") || '';
             if (releaseDate.toDateString() == today.toDateString() && alerted != "yes") {
                 swal({
                     title: i.name + " is released today!",
                     button: "Aww Yiss!"
-                })
-                sessionStorage.setItem("alerted", "yes")
-            }
+                });
+                sessionStorage.setItem("alerted", "yes");
+            };
         }
     }
 })
